@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLSA Claim Calculator</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+        .form-label {
+            margin: 0 !important;
+            margin-top: 0.25rem !important;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container mt-4 mb-4">
+        <h1 class="fw-bold mb-4">FLSA Claims</h1>
+
+        <form class="row">
+             <div class="inputgroupInfos col">
+                    <label class="form-label">Plaintiff Name :</label>
+                    <input type="text" class="form-control form-control-sm ">
+
+                    <label class="form-label">Defendant Name :</label>
+                    <input type="text" class="form-control form-control-sm  mb-3">
+
+                    <label class="form-label">Weekly Hours :</label>
+                    <input type="text" class="form-control form-control-sm " value="At all times relevant herein, Plaintiff was an hourly employee of Defendant and her last hourly rate of pay was about $23.46 an hour.">
+                    <label class="form-label">Hourly Rate :</label>
+                    <input type="text" class="form-control form-control-sm ">
+                    <label class="form-label">Defendant's Business :</label>
+                    <input type="text" class="form-control form-control-sm ">
+                    <label class="form-label">Plaintiff's Duties :</label>
+                    <input type="text" class="form-control form-control-sm ">
+
+                    <div class="formCheckGroup mt-3 mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination Under Review</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Joint Employment</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Multiple Plaintiffs</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Multiple Defendants</label>
+                        </div>
+                    </div>
+            
+                    <label class="form-label">Plaintiff's Pronoun :</label>
+                    <select class="form-select form-select-sm ">
+                        <option value="He">He</option>
+                        <option value="She">She</option>
+                        <option value="It">It</option>
+                        <option value="They">They</option>
+                    </select>
+                    <label class="form-label">Defendant's Pronoun :</label>
+                    <select class="form-select form-select-sm ">
+                        <option value="He">He</option>
+                        <option value="She">She</option>
+                        <option value="It">It</option>
+                        <option value="They">They</option>
+                    </select>
+                    <label class="form-label">Court :</label>
+                    <select class="form-select form-select-sm ">
+                        <option value="United States District Court" selected>United States District Court</option>
+                    </select>
+                    <label class="form-label">Venue :</label>
+                    <select class="form-select form-select-sm ">
+                        <option value="Southern District of New York" selected>Southern District of New York</option>
+                        <option value="Eastern District of New York" selected>Eastern District of New York</option>
+                        <option value="Northern District of New York" selected>Northern District of New York</option>
+                        <option value="Western District of New York" selected>Western District of New York</option>
+                    </select>
+
+                    <div class="formCheckGroup2 mt-3 mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">CAFA Juristion</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Diversity Jurisdiction</label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success mt-3 fw-bold">Create Complaint</button>
+            </div>
+
+            <div class="complainInfoGroup col pt-4">
+                <div class="card  mb-3">
+                    <h4 class="card-header" data-bs-toggle="collapse" data-bs-target="#unpaidWages" role="button" aria-expanded="false" aria-controls="unpaidWages">Unpaid Wages</h4>
+                    <div class="card-body collapse show" id="unpaidWages">
+                        <label class="form-label">Unpaid Wages</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Equitable Tolling</label>
+                        </div>
+
+                        <label class="form-label">OT Violations</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - Regular Rate</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - No Pay</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - Meal Break</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - On Call</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - Travel Time</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - Beyond Schedule</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - Commissions Excluded</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - Housing Excluded</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - Other Wage Excluded</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - Deductions</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">OT - Priority for Non OT (29 CFR 778.315)</label>
+                        </div>
+
+                        <label class="form-label">Federal</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">FLSA Over Time Claim</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">FLSA Minimum Wage Claim</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Cobra Severance CLaim</label>
+                        </div>
+
+                        <label class="form-label">NY State</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Regular Rate OT</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Minimum Rate OT</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Minimum Wage</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Spread of Hours Wage</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card  mb-3">
+                    <h4 class="card-header" data-bs-toggle="collapse" data-bs-target="#NYLLArticle6" role="button" aria-expanded="false" aria-controls="NYLLArticle6">NYLL Article 6</h4>
+                    <div class="card-body collapse" id="NYLLArticle6">
+                        <label class="form-label">NYLL Article 6</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NYLL Article 6 Claim</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Unpaid Wages</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Unpaid Commissions</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Unpaid Gratuities</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Unpaid Tips</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Prevailing Wages</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Manual Worker</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Wage Notice</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Wage Statement</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Deductions</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Severance</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Earned and Accrued Time</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Contract OT (DOL OL:RO-07-0069)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Other Contract Wage</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">NY Non Discretionary Bonus</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card  mb-3">
+                    <h4 class="card-header" data-bs-toggle="collapse" data-bs-target="#Termination" role="button" aria-expanded="false" aria-controls="Termination">Termination</h4>
+                    <div class="card-body collapse" id="Termination">
+                        <label class="form-label">Termination</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination Under Review</label>
+                        </div>
+
+                        <label class="form-label">Termination Reasons</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">No Reasons</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Laid Off</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Fired - Performance</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Fired - Misconduct</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Injury</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Leave</label>
+                        </div>
+
+                        <label class="form-label">Wrongful Termination (Federal)</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - FLSA 215</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">WT FMLA</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - ADEA</label>
+                        </div><div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - LMRA</label>
+                        </div><div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - Union Other</label>
+                        </div><div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - ADA</label>
+                        </div><div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - USERA</label>
+                        </div>
+
+                        <label class="form-label">Wrongful Termination (NY State)</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - NYLL 215</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - NYLL 740</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">WT - Contract Breach</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">WT - Constructive Discharge (Zellner)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - NYSHRL</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - NYCHRL</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - NY Sick Leave</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-label">Termination - Workers Comp 120</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
